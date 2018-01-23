@@ -1,8 +1,12 @@
 # Ice Source Updated!
 # By using Ice Source you accept that you wont Sell your exploit in any way
-**Make sure you are compiling it in Release x86 and not x64 and/or Debug**
 
-![](https://cdn.discordapp.com/attachments/360619589635407873/360629556958330890/2017-09-21_22-34-25.gif)
+# NOTE: You need to know C++(for the dll/Exploit), C# for external Ui/Gui and how to use Ida(Interactive DisAssembler) for the address and other stuff
+# If you only join to ask how to build the dll, how to fix common and simple errors you will be ignored or just called SKID 
+
+**Make sure you are compiling/Building it in Release x86 and not in x64 and/or Debug**
+
+![](https://i.imgur.com/5dKRpKK.png)
 
 [Click Here to go to the latest release](https://github.com/rakion99/IceSource/releases/latest)
 
@@ -18,4 +22,4 @@
 ## tepig "rawrcheck bypass"
 <sub> ICE SKIDDED By: Josh() and Cosmology</sub>
 # TODO LIST:              
-- [ ] **Add comments to the source**
+- [ ] **Add comments to the source(not needed at all since this is so simple)**
