@@ -10,6 +10,8 @@
 # Credits:
 # rakion99 for updating and improving this :wink:(I made a Discord Server if you want to join or not [IcE StUfF HeLp](https://discord.gg/K2A2Xhv "Click to join"))
 ## Roblox for making a exploitable game :/
+## Africaus
+## Deniality 
 ## Eternal for RetCheck https://github.com/EternalV3/Retcheck
 ## AutisticBobby https://youtube.com/c/AutisticBobby
 ## DOGGO "bypass/workaround for setting values on non-fe games"

@@ -32,10 +32,3 @@ void rlua_getService(std::string service)
 	rlua_pushstring(luaState, service.c_str());
 	rlua_call(luaState, 2, 1);
 }
-
-int *Changecontextlevel() {
-	int *Level = Rlua::contextLevel();
-	if (*Level == 0)
-		*Level = 69;
-	return Level;
-}

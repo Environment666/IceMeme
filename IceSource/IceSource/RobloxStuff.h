@@ -110,8 +110,6 @@ namespace Rlua {
 	Lua_setfield rlua_setfield2 = (Lua_setfield)unprotect(setfieldaddress);
 	typedef void(__cdecl *Lua_pushnumber)(RluaState lst, double n);
 	Lua_pushnumber rlua_pushnumber = (Lua_pushnumber)unprotect(pushnumberaddress);
-	typedef int*(__cdecl *ContextLevel)();
-	ContextLevel contextLevel = (ContextLevel)contextleveladdress;
 	typedef int(__cdecl *Lua_getmetatable)(RluaState lst, int idx);
 	Lua_getmetatable rlua_getmetatable = (Lua_getmetatable)unprotect(getmetatableaddress);
 	typedef int(__cdecl *Lua_pcall)(RluaState lst, int nargs, int nresults, int errfunc);

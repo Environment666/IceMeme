@@ -89,7 +89,6 @@ int Main() {
 	CreateThread(NULL, 0, CmdPipe, NULL, 0, NULL);//Create new thread for command pipe
 	CreateThread(NULL, 0, LuaCPipe, NULL, 0, NULL);//Create new thread for lua c pipe
 	ScanScriptContext();
-	Changecontextlevel();
 	MessageBox(NULL, "Ice has loaded Correctly!\nHey SKID! now you can use Ice!\nUpdated and improved by rakion99\nIce Skidded by Josh()", "ICE", MB_OK | MB_TOPMOST);//Messagebox so we can know when scan finished
 	return 0;
 }
