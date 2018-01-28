@@ -1,4 +1,4 @@
-e# IceMeme(Ice and MemeHax) Updated!
+# IceMeme(Ice and MemeHax) Updated!
 # By using IceMeme you accept that you wont Sell your exploit in any way
 
 # NOTE: You need to know C++(for the dll/Exploit), C# for external Ui/Gui and how to use Ida(Interactive DisAssembler) for the address and other stuff
