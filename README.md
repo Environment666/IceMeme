@@ -21,5 +21,10 @@
 ## DOGGO "bypass/workaround for setting values on non-fe games"
 ## tepig "rawrcheck bypass"
 <sub> ICE SKIDDED By: Josh() and Cosmology</sub>
+
+## Powered by Lua
+![](https://www.lua.org/images/powered-by-lua.gif)
+[Lua Site](http://www.lua.org/ "Click to enter Lua Site")
+
 # TODO LIST:              
 - [ ] **Add comments to the source(not needed at all since this is so simple)**
