@@ -116,6 +116,7 @@
     <ClInclude Include="Commands.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="Pipes.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="RobloxStuff.h" />
     <ClInclude Include="Scanners.h" />

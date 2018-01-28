@@ -32,3 +32,14 @@ void rlua_getService(std::string service)
 	rlua_pushstring(luaState, service.c_str());
 	rlua_call(luaState, 2, 1);
 }
+
+DWORD APIENTRY UglyToolBar()
+{
+	HWND FindRobloxWindow = FindWindowExW(NULL, NULL, NULL, L"Roblox");
+	HMENU GetUglyMenu = GetMenu(FindRobloxWindow);
+	HMENU CreateUglyMenuBar = CreateMenu();
+	InsertMenuW(CreateUglyMenuBar, NULL, MF_BYPOSITION | MF_STRING | MF_DISABLED, NULL, L"                             Ice has loaded Correctly!           Hey SKID! now you can use Ice!           Updated and improved by rakion99                 Ice Skidded by Josh()");
+	SetMenu(FindRobloxWindow, CreateUglyMenuBar);
+	SetWindowTextW(FindRobloxWindow, L"Roblox Exploited with ICE");
+	return 0;
+}
