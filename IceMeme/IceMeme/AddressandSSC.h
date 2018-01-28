@@ -11,7 +11,7 @@ DWORD getmetatableaddress = ASLR(0x71d460);
 DWORD pcalladdress = ASLR(0x71df50);
 DWORD rawrjzaddress = ASLR(0x7167a7);
 DWORD pushbooleanaddress = ASLR(0x71e020);
-DWORD Identityflagaddress = ASLR(0x1585DFC);
+DWORD Identityaddress = ASLR(0x1585DFC);
 DWORD pushniladdress = ASLR(0x71e410);
 
 int v41;//ScriptContext
@@ -23,5 +23,5 @@ void ScanScriptContext() {
 	v41 = Memory::Scan((char*)&ScriptContextVFTable);
 	//luaState
 	luaState = v41 + 56 * v49 + 164 - *(DWORD *)(v41 + 56 * v49 + 164);
-	*(DWORD*)Identityflagaddress = 6;
+	*(DWORD*)Identityaddress = 6;
 }
