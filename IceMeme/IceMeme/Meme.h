@@ -28,7 +28,7 @@ int GameIndex(lua_State* L) {
 		game_didGlobal = true;
 	}
 	lua_getglobal(L, "game");
-	rlua_getfield(luaState, -1, lua_tostring(L, -2));
+	Rlua::rlua_getfield(luaState, -1, lua_tostring(L, -2));
 	return 1;
 }
 
@@ -39,13 +39,13 @@ int GameNewIndex(lua_State* L) {
 		/*	MsgBox("Vector3", "getglobal");*/
 		rlua_getglobal(luaState, "Vector3");
 		/*MsgBox("new", "getfield -1");*/
-		rlua_getfield(luaState, -1, "new");
+		Rlua::rlua_getfield(luaState, -1, "new");
 		/*MsgBox(std::to_string(xx), "pushnumber");*/
-		rlua_pushnumber(luaState, xx);
+		Rlua::rlua_pushnumber(luaState, xx);
 		/*MsgBox(std::to_string(yy), "pushnumber");*/
-		rlua_pushnumber(luaState, yy);
+		Rlua::rlua_pushnumber(luaState, yy);
 		/*MsgBox(std::to_string(zz), "pushnumber");*/
-		rlua_pushnumber(luaState, zz);
+		Rlua::rlua_pushnumber(luaState, zz);
 		/*MsgBox("3 1 0", "pcall");*/
 		rlua_bpcall(luaState, 3, 1, 0);
 		/*	MsgBox(lua_tostring(L, -3), "setfield -3");*/
@@ -57,13 +57,13 @@ int GameNewIndex(lua_State* L) {
 		/*	MsgBox("Color3", "getglobal");*/
 		rlua_getglobal(luaState, "Color3");
 		/*MsgBox("-1 new", "getfield");*/
-		rlua_getfield(luaState, -1, "new");
+		Rlua::rlua_getfield(luaState, -1, "new");
 		/*MsgBox(std::to_string(xx), "pushnumber");*/
-		rlua_pushnumber(luaState, xx);
+		Rlua::rlua_pushnumber(luaState, xx);
 		/*MsgBox(std::to_string(yy), "pushnumber");*/
-		rlua_pushnumber(luaState, yy);
+		Rlua::rlua_pushnumber(luaState, yy);
 		/*MsgBox(std::to_string(zz), "pushnumber");*/
-		rlua_pushnumber(luaState, zz);
+		Rlua::rlua_pushnumber(luaState, zz);
 		/*MsgBox("3 1 0", "pcall");*/
 		rlua_bpcall(luaState, 3, 1, 0);
 		/*MsgBox(lua_tostring(L, -3), "setfield -3");*/
@@ -73,19 +73,19 @@ int GameNewIndex(lua_State* L) {
 	}
 	else {
 		if (lua_isnumber(L, -2)) {
-			rlua_pushnumber(luaState, lua_tonumber(L, -2));
+			Rlua::rlua_pushnumber(luaState, lua_tonumber(L, -2));
 			/*MsgBox(std::to_string(lua_tonumber(L, -2)), "pushnumber");*/
 			rlua_setfield(luaState, -2, lua_tostring(L, -3));
 			/*MsgBox(lua_tostring(L, -3), "setfield -2");*/
 		}
 		else if (lua_isboolean(L, -2)) {
-			rlua_pushboolean(luaState, lua_toboolean(L, -2));
+			Rlua::rlua_pushboolean(luaState, lua_toboolean(L, -2));
 			/*MsgBox(std::to_string(lua_toboolean(L, -2)), "pushboolean");*/
 			rlua_setfield(luaState, -2, lua_tostring(L, -3));
 			/*MsgBox(lua_tostring(L, -3), "setfield -2");*/
 		}
 		else if (lua_isstring(L, -2)) {
-			rlua_pushstring(luaState, lua_tostring(L, -2));
+			Rlua::rlua_pushstring(luaState, lua_tostring(L, -2));
 			/*	MsgBox(lua_tostring(L, -2), "pushstring");*/
 			rlua_setfield(luaState, -2, lua_tostring(L, -3));
 			/*MsgBox(lua_tostring(L, -3), "setfield -2");*/
@@ -94,7 +94,7 @@ int GameNewIndex(lua_State* L) {
 
 		}
 		else if (lua_isnil(L, -2)) {
-			rlua_pushnil(luaState);
+			Rlua::rlua_pushnil(luaState);
 			/*	MsgBox("nil", "pushnil");*/
 			rlua_setfield(luaState, -2, lua_tostring(L, -3));
 			/*MsgBox(lua_tostring(L, -3), "setfield -2");*/
@@ -111,7 +111,7 @@ int WorkspaceIndex(lua_State* L) {
 	}
 	lua_getglobal(L, "workspace");
 	/*MsgBox(lua_tostring(L, -2), "getfield -1");*/
-	rlua_getfield(luaState, -1, lua_tostring(L, -2));
+	Rlua::rlua_getfield(luaState, -1, lua_tostring(L, -2));
 	return 1;
 }
 
@@ -122,13 +122,13 @@ int WorkspaceNewIndex(lua_State* L) {
 		/*	MsgBox("Vector3", "getglobal");*/
 		rlua_getglobal(luaState, "Vector3");
 		/*MsgBox("new", "getfield -1");*/
-		rlua_getfield(luaState, -1, "new");
+		Rlua::rlua_getfield(luaState, -1, "new");
 		/*MsgBox(std::to_string(xx), "pushnumber");*/
-		rlua_pushnumber(luaState, xx);
+		Rlua::rlua_pushnumber(luaState, xx);
 		/*MsgBox(std::to_string(yy), "pushnumber");*/
-		rlua_pushnumber(luaState, yy);
+		Rlua::rlua_pushnumber(luaState, yy);
 		/*MsgBox(std::to_string(zz), "pushnumber");*/
-		rlua_pushnumber(luaState, zz);
+		Rlua::rlua_pushnumber(luaState, zz);
 		/*MsgBox("3 1 0", "pcall");*/
 		rlua_bpcall(luaState, 3, 1, 0);
 		/*	MsgBox(lua_tostring(L, -3), "setfield -3");*/
@@ -140,13 +140,13 @@ int WorkspaceNewIndex(lua_State* L) {
 		/*	MsgBox("Color3", "getglobal");*/
 		rlua_getglobal(luaState, "Color3");
 		/*MsgBox("-1 new", "getfield");*/
-		rlua_getfield(luaState, -1, "new");
+		Rlua::rlua_getfield(luaState, -1, "new");
 		/*MsgBox(std::to_string(xx), "pushnumber");*/
-		rlua_pushnumber(luaState, xx);
+		Rlua::rlua_pushnumber(luaState, xx);
 		/*MsgBox(std::to_string(yy), "pushnumber");*/
-		rlua_pushnumber(luaState, yy);
+		Rlua::rlua_pushnumber(luaState, yy);
 		/*MsgBox(std::to_string(zz), "pushnumber");*/
-		rlua_pushnumber(luaState, zz);
+		Rlua::rlua_pushnumber(luaState, zz);
 		/*MsgBox("3 1 0", "pcall");*/
 		rlua_bpcall(luaState, 3, 1, 0);
 		/*MsgBox(lua_tostring(L, -3), "setfield -3");*/
@@ -156,25 +156,25 @@ int WorkspaceNewIndex(lua_State* L) {
 	}
 	else {
 		if (lua_isnumber(L, -2)) {
-			rlua_pushnumber(luaState, lua_tonumber(L, -2));
+			Rlua::rlua_pushnumber(luaState, lua_tonumber(L, -2));
 			/*MsgBox(std::to_string(lua_tonumber(L, -2)), "pushnumber");*/
 			rlua_setfield(luaState, -2, lua_tostring(L, -3));
 			/*MsgBox(lua_tostring(L, -3), "setfield -2");*/
 		}
 		else if (lua_isboolean(L, -2)) {
-			rlua_pushboolean(luaState, lua_toboolean(L, -2));
+			Rlua::rlua_pushboolean(luaState, lua_toboolean(L, -2));
 			/*MsgBox(std::to_string(lua_toboolean(L, -2)), "pushboolean");*/
 			rlua_setfield(luaState, -2, lua_tostring(L, -3));
 			/*MsgBox(lua_tostring(L, -3), "setfield -2");*/
 		}
 		else if (lua_isstring(L, -2)) {
-			rlua_pushstring(luaState, lua_tostring(L, -2));
+			Rlua::rlua_pushstring(luaState, lua_tostring(L, -2));
 			/*	MsgBox(lua_tostring(L, -2), "pushstring");*/
 			rlua_setfield(luaState, -2, lua_tostring(L, -3));
 			/*MsgBox(lua_tostring(L, -3), "setfield -2");*/
 		}
 		else if (lua_isnil(L, -2)) {
-			rlua_pushnil(luaState);
+			Rlua::rlua_pushnil(luaState);
 			/*	MsgBox("nil", "pushnil");*/
 			rlua_setfield(luaState, -2, lua_tostring(L, -3));
 			/*MsgBox(lua_tostring(L, -3), "setfield -2");*/
@@ -186,22 +186,22 @@ int WorkspaceNewIndex(lua_State* L) {
 int GameCall(lua_State* L) {
 	game_didGlobal = false;
 	arg_size = 1;
-	rlua_pushvalue(luaState, -2);
+	Rlua::rlua_pushvalue(luaState, -2);
 	/*MsgBox("-2", "pushvalue");*/
 	int i = 2;
 	while (!lua_isnil(L, -i)) {
 		if (lua_isnumber(L, -i)) {
-			rlua_pushnumber(luaState, lua_tonumber(L, -i));
+			Rlua::rlua_pushnumber(luaState, lua_tonumber(L, -i));
 			/*MsgBox(std::to_string(lua_tonumber(L, -i)), "pushnumber");*/
 			arg_size++;
 		}
 		if (lua_isstring(L, -i)) {
-			rlua_pushstring(luaState, lua_tostring(L, -i));
+			Rlua::rlua_pushstring(luaState, lua_tostring(L, -i));
 			/*MsgBox(lua_tostring(L, -i), "pushstring");*/
 			arg_size++;
 		}
 		if (lua_isboolean(L, -i)) {
-			rlua_pushboolean(luaState, lua_toboolean(L, -i));
+			Rlua::rlua_pushboolean(luaState, lua_toboolean(L, -i));
 			/*MsgBox(std::to_string(lua_toboolean(L, -i)), "pushboolean");*/
 			arg_size++;
 		}
@@ -216,22 +216,22 @@ int GameCall(lua_State* L) {
 int WorkspaceCall(lua_State* L) {
 	workspace_didGlobal = false;
 	arg_size = 1;
-	rlua_pushvalue(luaState, -2);
+	Rlua::rlua_pushvalue(luaState, -2);
 	/*MsgBox("-2", "pushvalue");*/
 	int i = 2;
 	while (!lua_isnil(L, -i)) {
 		if (lua_isnumber(L, -i)) {
-			rlua_pushnumber(luaState, lua_tonumber(L, -i));
+			Rlua::rlua_pushnumber(luaState, lua_tonumber(L, -i));
 			/*MsgBox(std::to_string(lua_tonumber(L, -i)), "pushnumber");*/
 			arg_size++;
 		}
 		if (lua_isstring(L, -i)) {
-			rlua_pushstring(luaState, lua_tostring(L, -i));
+			Rlua::rlua_pushstring(luaState, lua_tostring(L, -i));
 			/*MsgBox(lua_tostring(L, -i), "pushstring");*/
 			arg_size++;
 		}
 		if (lua_isboolean(L, -i)) {
-			rlua_pushboolean(luaState, lua_toboolean(L, -i));
+			Rlua::rlua_pushboolean(luaState, lua_toboolean(L, -i));
 			/*MsgBox(std::to_string(lua_toboolean(L, -i)), "pushboolean");*/
 			arg_size++;
 		}
@@ -250,11 +250,11 @@ int Instance_new(lua_State* L) {
 	/*MsgBox("Instance", "getglobal");*/
 	rlua_getglobal(luaState, "Instance");
 	/*MsgBox("new", "getfield -1");*/
-	rlua_getfield(luaState, -1, "new");
+	Rlua::rlua_getfield(luaState, -1, "new");
 	if (lua_isstring(L, 1)) {
 		/*MsgBox(lua_tostring(L, 1), "pushstring");*/
-		rlua_pushstring(luaState, lua_tostring(L, 1));
-		if (a == 2) rlua_pushvalue(luaState, -4);/* MsgBox("-4", "pushvalue");*/
+		Rlua::rlua_pushstring(luaState, lua_tostring(L, 1));
+		if (a == 2) Rlua::rlua_pushvalue(luaState, -4);/* MsgBox("-4", "pushvalue");*/
 	}
 	/*MsgBox(std::to_string(a) + " 1 0", "pcall");*/
 	rlua_bpcall(luaState, a, 1, 0);
@@ -276,28 +276,28 @@ int PrintIdentity(lua_State* Lua51) {
 		if (lua_isstring(Lua51, -(i))) {
 			print = lua_tostring(Lua51, i);
 			rlua_getglobal(luaState, "printidentity");
-			rlua_pushstring(luaState, print.c_str());
+			Rlua::rlua_pushstring(luaState, print.c_str());
 			rlua_bpcall(luaState, 1, 0, 0);
-			rlua_settop(luaState, 0);
+			Rlua::rlua_settop(luaState, 0);
 		}
 		else if (lua_isboolean(Lua51, -(i))) {
 			print = lua_toboolean(Lua51, i);
 			rlua_getglobal(luaState, "printidentity");
-			rlua_pushstring(luaState, print.c_str());
+			Rlua::rlua_pushstring(luaState, print.c_str());
 			rlua_bpcall(luaState, 1, 0, 0);
-			rlua_settop(luaState, 0);
+			Rlua::rlua_settop(luaState, 0);
 		}
 		else if (lua_isnil(Lua51, -(i))) {
 			rlua_getglobal(luaState, "printidentity");
-			rlua_pushnil(luaState);
+			Rlua::rlua_pushnil(luaState);
 			rlua_bpcall(luaState, 1, 0, 0);
-			rlua_settop(luaState, 0);
+			Rlua::rlua_settop(luaState, 0);
 		}
 	}
 	if (arg == 0) {
 		rlua_getglobal(luaState, "printidentity");
 		rlua_bpcall(luaState, 0, 0, 0);
-		rlua_settop(luaState, 0);
+		Rlua::rlua_settop(luaState, 0);
 	}
 	return 0;
 }
@@ -324,7 +324,7 @@ int Print(lua_State* L) {
 		lua_pop(L, 1);  /* pop result */
 	}
 	rlua_getglobal(luaState, "print");
-	rlua_pushstring(luaState, message.c_str());
+	Rlua::rlua_pushstring(luaState, message.c_str());
 	rlua_bpcall(luaState, n, 0, 0);
 	return 0;
 }
@@ -351,7 +351,7 @@ int Warn(lua_State* L) {
 		lua_pop(L, 1);  /* pop result */
 	}
 	rlua_getglobal(luaState, "warn");
-	rlua_pushstring(luaState, message.c_str());
+	Rlua::rlua_pushstring(luaState, message.c_str());
 	rlua_bpcall(luaState, n, 0, 0);
 	return 0;
 }
@@ -377,7 +377,7 @@ int Error(lua_State* L) {
 		lua_pop(L, 1);  /* pop result */
 	}
 	rlua_getglobal(luaState, "error");
-	rlua_pushstring(luaState, message.c_str());
+	Rlua::rlua_pushstring(luaState, message.c_str());
 	rlua_bpcall(luaState, n, 0, 0);
 	return 0;
 }
@@ -403,7 +403,7 @@ int Info(lua_State* L) {
 		lua_pop(L, 1);  /* pop result */
 	}
 	rlua_getglobal(luaState, "info");
-	rlua_pushstring(luaState, message.c_str());
+	Rlua::rlua_pushstring(luaState, message.c_str());
 	rlua_bpcall(luaState, n, 0, 0);
 	return 0;
 }
@@ -501,7 +501,13 @@ void Exe(std::string input) {
 	luaL_openlibs(LuaS);
 	opencustomlibs(LuaS);
 	std::string total;
-	luaL_dostring(LuaS, input.c_str());
+	int error = luaL_dostring(LuaS, input.c_str());//Lua Error Interpreter(?) Check Roblox Dev Console(Press F9 in Game)
+	if (error) {
+		Rlua::rlua_getfield(luaState, LUA_GLOBALSINDEX, "print");
+		Rlua::rlua_pushstring(luaState, lua_tostring(LuaS, -1));
+		rlua_bpcall(luaState, 1, 0, 0);
+		lua_pop(LuaS, 1);
+	}
 	lua_settop(LuaS, 0);
 	lua_close(LuaS);
 }

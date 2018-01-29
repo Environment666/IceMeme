@@ -3,7 +3,6 @@ DWORD getfieldaddress = ASLR(0x71d190);
 DWORD settopaddress = ASLR(0x71f2a0);
 DWORD pushstringaddress = ASLR(0x71e510);
 DWORD pushvalueaddress = ASLR(0x71e5d0);
-DWORD calladdress = ASLR(0x71caf0);
 DWORD setfieldaddress = ASLR(0x71eec0);
 DWORD pushnumberaddress = ASLR(0x71e480);
 DWORD ScriptContextVFTableaddress = ASLR(0x69fd3e);

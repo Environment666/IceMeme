@@ -1,8 +1,8 @@
-﻿using System;
+﻿using FastColoredTextBoxNS;
+using System;
 using System.Drawing;
 using System.IO;
-using System.IO.Pipes;
-using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -23,19 +23,22 @@ namespace IceMemeUI
         {
             if (NamedPipes.NamedPipeExist(NamedPipes.scriptpipe))//check if the pipe exist
             {
-                string[] array = LuaCBox.Text.Split("\r\n".ToCharArray());//array to store all and split the script
-                for (int i = 0; i < array.Length; i++)//for loop to send all the lines
+                new Thread(() =>//lets run this in another thread so if roblox crash the ui/gui don't freeze
                 {
-                    string script = array[i];
-                    try
+                    string[] array = LuaCBox.Text.Split("\r\n".ToCharArray());//array to store all and split the script
+                    for (int i = 0; i < array.Length; i++)//for loop to send all the lines
                     {
-                        NamedPipes.LuaCPipe(script);//lua c pipe function to send the array
+                        string script = array[i];
+                        try
+                        {
+                            NamedPipes.LuaCPipe(script);//lua c pipe function to send the array
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString());//if there any error a messagebox will pop up with the error
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString());//if there any error a messagebox will pop up with the error
-                    }
-                }
+                }).Start();
             }
             else
             {
@@ -163,37 +166,13 @@ namespace IceMemeUI
             if (thm > 1) thm = 0;
         }
 
-        private void materialSkinUIToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Start.MaterialSkinForm();
-        }
-
         private void IceSourceForm_FormClosed(object sender, FormClosedEventArgs e) => Application.Exit();
-
-        private void metroModernUIToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Start.MetroModernUIForm();
-        }
 
         private void Executelua_Click(object sender, EventArgs e)
         {
             if (NamedPipes.NamedPipeExist(NamedPipes.luapipe))//check if the pipe exist
             {
-                string[] array = LuaBox.Text.Split("\r\n".ToCharArray());//array to store all and split the script
-                for (int i = 0; i < array.Length; i++)//for loop to send all the lines
-                {
-                    string script = array[i];
-                    try
-                    {
-                        NamedPipes.LuaPipe(script);//lua c pipe function to send the array
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString());//if there any error a messagebox will pop up with the error
-                    }
-                }
+                NamedPipes.LuaPipe(LuaBox.Text);
             }
             else
             {
@@ -218,6 +197,40 @@ namespace IceMemeUI
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);//display if got error
                 }
             }
+        }
+        Style SalmonStyle = new TextStyle(Brushes.Salmon, null, FontStyle.Italic);
+        Style OrangeStyle = new TextStyle(Brushes.Orange, null, FontStyle.Italic);
+        Style LimeGreenStyle = new TextStyle(Brushes.LimeGreen, null, FontStyle.Italic);
+        Style CyanStyle = new TextStyle(Brushes.Cyan, null, FontStyle.Italic);
+        Style SpringGreenStyle = new TextStyle(Brushes.SpringGreen, null, FontStyle.Italic);
+        Style SkyBlueStyle = new TextStyle(Brushes.SkyBlue, null, FontStyle.Italic);
+        Style PaleGoldenrodStyle = new TextStyle(Brushes.PaleGoldenrod, null, FontStyle.Italic);
+        Style FirebrickStyle = new TextStyle(Brushes.Firebrick, null, FontStyle.Italic);
+        Style GoldBlueStyle = new TextStyle(Brushes.Gold, null, FontStyle.Italic);
+        Style CoralStyle = new TextStyle(Brushes.Coral, null, FontStyle.Italic);
+
+        private void LuaCBox_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
+        {
+            e.ChangedRange.ClearStyle(SalmonStyle);
+            e.ChangedRange.ClearStyle(OrangeStyle);
+            e.ChangedRange.ClearStyle(LimeGreenStyle);
+            e.ChangedRange.ClearStyle(CyanStyle);
+            e.ChangedRange.ClearStyle(SpringGreenStyle);
+            e.ChangedRange.ClearStyle(SkyBlueStyle);
+            e.ChangedRange.ClearStyle(PaleGoldenrodStyle);
+            e.ChangedRange.ClearStyle(FirebrickStyle);
+            e.ChangedRange.ClearStyle(GoldBlueStyle);
+            e.ChangedRange.ClearStyle(CoralStyle);
+            e.ChangedRange.SetStyle(SalmonStyle, @"getglobal", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(OrangeStyle, @"getfield", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(LimeGreenStyle, @"pushnumber", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(CyanStyle, @"setfield", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(SpringGreenStyle, @"pushvalue", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(SkyBlueStyle, @"pushstring", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(PaleGoldenrodStyle, @"pushnumber", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(FirebrickStyle, @"emptystack", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(GoldBlueStyle, @"getservice", RegexOptions.Multiline);
+            e.ChangedRange.SetStyle(CoralStyle, @"pushboolean", RegexOptions.Multiline);
         }
     }
 }

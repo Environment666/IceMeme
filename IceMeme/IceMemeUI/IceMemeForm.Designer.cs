@@ -45,29 +45,25 @@
             this.FF = new System.Windows.Forms.Button();
             this.Btools = new System.Windows.Forms.Button();
             this.LuaC = new System.Windows.Forms.TabPage();
+            this.LuaCBox = new FastColoredTextBoxNS.FastColoredTextBox();
             this.Open = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
             this.Execute = new System.Windows.Forms.Button();
-            this.LuaCBox = new System.Windows.Forms.RichTextBox();
+            this.Lua = new System.Windows.Forms.TabPage();
+            this.Clearlua = new System.Windows.Forms.Button();
+            this.Executelua = new System.Windows.Forms.Button();
+            this.Openlua = new System.Windows.Forms.Button();
+            this.LuaBox = new FastColoredTextBoxNS.FastColoredTextBox();
             this.Inject = new System.Windows.Forms.Button();
             this.TopCheck = new System.Windows.Forms.CheckBox();
             this.Theme = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.changeUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialSkinUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroModernUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Lua = new System.Windows.Forms.TabPage();
-            this.LuaBox = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.Openlua = new System.Windows.Forms.Button();
-            this.Executelua = new System.Windows.Forms.Button();
-            this.Clearlua = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.CMDS.SuspendLayout();
             this.QuickExe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JumpPowerValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).BeginInit();
             this.LuaC.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LuaCBox)).BeginInit();
             this.Lua.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LuaBox)).BeginInit();
             this.SuspendLayout();
@@ -78,10 +74,12 @@
             this.tabControl1.Controls.Add(this.QuickExe);
             this.tabControl1.Controls.Add(this.LuaC);
             this.tabControl1.Controls.Add(this.Lua);
-            this.tabControl1.Location = new System.Drawing.Point(12, 27);
+            this.tabControl1.ItemSize = new System.Drawing.Size(16, 25);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(25, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(260, 237);
+            this.tabControl1.Size = new System.Drawing.Size(340, 252);
             this.tabControl1.TabIndex = 0;
             // 
             // CMDS
@@ -90,10 +88,11 @@
             this.CMDS.Controls.Add(this.CmdBox);
             this.CMDS.Controls.Add(this.Send);
             this.CMDS.Controls.Add(this.CmdTextBox);
-            this.CMDS.Location = new System.Drawing.Point(4, 22);
+            this.CMDS.ImageIndex = 0;
+            this.CMDS.Location = new System.Drawing.Point(4, 29);
             this.CMDS.Name = "CMDS";
             this.CMDS.Padding = new System.Windows.Forms.Padding(3);
-            this.CMDS.Size = new System.Drawing.Size(252, 211);
+            this.CMDS.Size = new System.Drawing.Size(332, 219);
             this.CMDS.TabIndex = 1;
             this.CMDS.Text = "CMDS";
             // 
@@ -105,7 +104,7 @@
             this.CmdBox.Location = new System.Drawing.Point(6, 6);
             this.CmdBox.Name = "CmdBox";
             this.CmdBox.ReadOnly = true;
-            this.CmdBox.Size = new System.Drawing.Size(240, 156);
+            this.CmdBox.Size = new System.Drawing.Size(320, 172);
             this.CmdBox.TabIndex = 2;
             this.CmdBox.Text = "Welcome to IceMeme\nType cmds to see the commands\ncredits to see the credits\n[p] =" +
     " player, [#] = number";
@@ -115,7 +114,7 @@
             // 
             this.Send.BackColor = System.Drawing.SystemColors.MenuText;
             this.Send.ForeColor = System.Drawing.SystemColors.Window;
-            this.Send.Location = new System.Drawing.Point(171, 174);
+            this.Send.Location = new System.Drawing.Point(251, 184);
             this.Send.Name = "Send";
             this.Send.Size = new System.Drawing.Size(75, 29);
             this.Send.TabIndex = 1;
@@ -128,9 +127,9 @@
             this.CmdTextBox.BackColor = System.Drawing.SystemColors.MenuText;
             this.CmdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmdTextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.CmdTextBox.Location = new System.Drawing.Point(6, 174);
+            this.CmdTextBox.Location = new System.Drawing.Point(6, 184);
             this.CmdTextBox.Name = "CmdTextBox";
-            this.CmdTextBox.Size = new System.Drawing.Size(159, 29);
+            this.CmdTextBox.Size = new System.Drawing.Size(239, 29);
             this.CmdTextBox.TabIndex = 0;
             this.CmdTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CmdTextBox_KeyDown);
             // 
@@ -145,9 +144,9 @@
             this.QuickExe.Controls.Add(this.Ws);
             this.QuickExe.Controls.Add(this.FF);
             this.QuickExe.Controls.Add(this.Btools);
-            this.QuickExe.Location = new System.Drawing.Point(4, 22);
+            this.QuickExe.Location = new System.Drawing.Point(4, 29);
             this.QuickExe.Name = "QuickExe";
-            this.QuickExe.Size = new System.Drawing.Size(252, 211);
+            this.QuickExe.Size = new System.Drawing.Size(332, 219);
             this.QuickExe.TabIndex = 2;
             this.QuickExe.Text = "QuickExe";
             // 
@@ -156,7 +155,7 @@
             this.JumpPowerValue.BackColor = System.Drawing.SystemColors.MenuText;
             this.JumpPowerValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JumpPowerValue.ForeColor = System.Drawing.SystemColors.Window;
-            this.JumpPowerValue.Location = new System.Drawing.Point(162, 122);
+            this.JumpPowerValue.Location = new System.Drawing.Point(190, 122);
             this.JumpPowerValue.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -176,7 +175,7 @@
             this.JP.BackColor = System.Drawing.SystemColors.MenuText;
             this.JP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JP.ForeColor = System.Drawing.SystemColors.Window;
-            this.JP.Location = new System.Drawing.Point(162, 162);
+            this.JP.Location = new System.Drawing.Point(190, 162);
             this.JP.Name = "JP";
             this.JP.Size = new System.Drawing.Size(75, 23);
             this.JP.TabIndex = 6;
@@ -189,7 +188,7 @@
             this.Sit.BackColor = System.Drawing.SystemColors.MenuText;
             this.Sit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sit.ForeColor = System.Drawing.SystemColors.Window;
-            this.Sit.Location = new System.Drawing.Point(12, 162);
+            this.Sit.Location = new System.Drawing.Point(46, 162);
             this.Sit.Name = "Sit";
             this.Sit.Size = new System.Drawing.Size(75, 23);
             this.Sit.TabIndex = 5;
@@ -202,7 +201,7 @@
             this.Suicide.BackColor = System.Drawing.SystemColors.MenuText;
             this.Suicide.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Suicide.ForeColor = System.Drawing.SystemColors.Window;
-            this.Suicide.Location = new System.Drawing.Point(12, 119);
+            this.Suicide.Location = new System.Drawing.Point(46, 119);
             this.Suicide.Name = "Suicide";
             this.Suicide.Size = new System.Drawing.Size(75, 23);
             this.Suicide.TabIndex = 4;
@@ -215,7 +214,7 @@
             this.WalkSpeedValue.BackColor = System.Drawing.SystemColors.MenuText;
             this.WalkSpeedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WalkSpeedValue.ForeColor = System.Drawing.SystemColors.Window;
-            this.WalkSpeedValue.Location = new System.Drawing.Point(162, 41);
+            this.WalkSpeedValue.Location = new System.Drawing.Point(190, 44);
             this.WalkSpeedValue.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -235,7 +234,7 @@
             this.Ws.BackColor = System.Drawing.SystemColors.MenuText;
             this.Ws.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ws.ForeColor = System.Drawing.SystemColors.Window;
-            this.Ws.Location = new System.Drawing.Point(162, 79);
+            this.Ws.Location = new System.Drawing.Point(190, 79);
             this.Ws.Name = "Ws";
             this.Ws.Size = new System.Drawing.Size(75, 23);
             this.Ws.TabIndex = 2;
@@ -248,7 +247,7 @@
             this.FF.BackColor = System.Drawing.SystemColors.MenuText;
             this.FF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FF.ForeColor = System.Drawing.SystemColors.Window;
-            this.FF.Location = new System.Drawing.Point(12, 79);
+            this.FF.Location = new System.Drawing.Point(46, 79);
             this.FF.Name = "FF";
             this.FF.Size = new System.Drawing.Size(75, 23);
             this.FF.TabIndex = 1;
@@ -261,7 +260,7 @@
             this.Btools.BackColor = System.Drawing.SystemColors.MenuText;
             this.Btools.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btools.ForeColor = System.Drawing.SystemColors.Window;
-            this.Btools.Location = new System.Drawing.Point(12, 41);
+            this.Btools.Location = new System.Drawing.Point(46, 41);
             this.Btools.Name = "Btools";
             this.Btools.Size = new System.Drawing.Size(75, 23);
             this.Btools.TabIndex = 0;
@@ -272,23 +271,63 @@
             // LuaC
             // 
             this.LuaC.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaC.Controls.Add(this.LuaCBox);
             this.LuaC.Controls.Add(this.Open);
             this.LuaC.Controls.Add(this.Clear);
             this.LuaC.Controls.Add(this.Execute);
-            this.LuaC.Controls.Add(this.LuaCBox);
             this.LuaC.ForeColor = System.Drawing.SystemColors.Window;
-            this.LuaC.Location = new System.Drawing.Point(4, 22);
+            this.LuaC.Location = new System.Drawing.Point(4, 29);
             this.LuaC.Name = "LuaC";
             this.LuaC.Padding = new System.Windows.Forms.Padding(3);
-            this.LuaC.Size = new System.Drawing.Size(252, 211);
+            this.LuaC.Size = new System.Drawing.Size(332, 219);
             this.LuaC.TabIndex = 0;
             this.LuaC.Text = "Lua C";
+            // 
+            // LuaCBox
+            // 
+            this.LuaCBox.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.LuaCBox.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\n";
+            this.LuaCBox.AutoScrollMinSize = new System.Drawing.Size(2, 14);
+            this.LuaCBox.BackBrush = null;
+            this.LuaCBox.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaCBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.LuaCBox.CharHeight = 14;
+            this.LuaCBox.CharWidth = 8;
+            this.LuaCBox.CommentPrefix = "--";
+            this.LuaCBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LuaCBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.LuaCBox.Font = new System.Drawing.Font("Courier New", 9.75F);
+            this.LuaCBox.IsReplaceMode = false;
+            this.LuaCBox.Language = FastColoredTextBoxNS.Language.Lua;
+            this.LuaCBox.LeftBracket = '(';
+            this.LuaCBox.LeftBracket2 = '{';
+            this.LuaCBox.Location = new System.Drawing.Point(6, 6);
+            this.LuaCBox.Name = "LuaCBox";
+            this.LuaCBox.Paddings = new System.Windows.Forms.Padding(0);
+            this.LuaCBox.RightBracket = ')';
+            this.LuaCBox.RightBracket2 = '}';
+            this.LuaCBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.LuaCBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("LuaCBox.ServiceColors")));
+            this.LuaCBox.Size = new System.Drawing.Size(323, 168);
+            this.LuaCBox.TabIndex = 4;
+            this.LuaCBox.Zoom = 100;
+            this.LuaCBox.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.LuaCBox_TextChanged);
             // 
             // Open
             // 
             this.Open.BackColor = System.Drawing.SystemColors.MenuText;
             this.Open.ForeColor = System.Drawing.SystemColors.Window;
-            this.Open.Location = new System.Drawing.Point(11, 169);
+            this.Open.Location = new System.Drawing.Point(32, 180);
             this.Open.Name = "Open";
             this.Open.Size = new System.Drawing.Size(56, 36);
             this.Open.TabIndex = 3;
@@ -300,7 +339,7 @@
             // 
             this.Clear.BackColor = System.Drawing.SystemColors.MenuText;
             this.Clear.ForeColor = System.Drawing.SystemColors.Window;
-            this.Clear.Location = new System.Drawing.Point(165, 169);
+            this.Clear.Location = new System.Drawing.Point(233, 180);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(81, 36);
             this.Clear.TabIndex = 2;
@@ -312,7 +351,7 @@
             // 
             this.Execute.BackColor = System.Drawing.SystemColors.MenuText;
             this.Execute.ForeColor = System.Drawing.SystemColors.Window;
-            this.Execute.Location = new System.Drawing.Point(84, 169);
+            this.Execute.Location = new System.Drawing.Point(138, 180);
             this.Execute.Name = "Execute";
             this.Execute.Size = new System.Drawing.Size(64, 36);
             this.Execute.TabIndex = 1;
@@ -320,21 +359,100 @@
             this.Execute.UseVisualStyleBackColor = false;
             this.Execute.Click += new System.EventHandler(this.Execute_Click);
             // 
-            // LuaCBox
+            // Lua
             // 
-            this.LuaCBox.BackColor = System.Drawing.SystemColors.MenuText;
-            this.LuaCBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.LuaCBox.Location = new System.Drawing.Point(6, 6);
-            this.LuaCBox.Name = "LuaCBox";
-            this.LuaCBox.Size = new System.Drawing.Size(240, 157);
-            this.LuaCBox.TabIndex = 0;
-            this.LuaCBox.Text = "";
+            this.Lua.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Lua.Controls.Add(this.Clearlua);
+            this.Lua.Controls.Add(this.Executelua);
+            this.Lua.Controls.Add(this.Openlua);
+            this.Lua.Controls.Add(this.LuaBox);
+            this.Lua.ForeColor = System.Drawing.SystemColors.Window;
+            this.Lua.Location = new System.Drawing.Point(4, 29);
+            this.Lua.Name = "Lua";
+            this.Lua.Size = new System.Drawing.Size(332, 219);
+            this.Lua.TabIndex = 3;
+            this.Lua.Text = "Lua";
+            // 
+            // Clearlua
+            // 
+            this.Clearlua.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Clearlua.ForeColor = System.Drawing.SystemColors.Window;
+            this.Clearlua.Location = new System.Drawing.Point(233, 180);
+            this.Clearlua.Name = "Clearlua";
+            this.Clearlua.Size = new System.Drawing.Size(81, 36);
+            this.Clearlua.TabIndex = 6;
+            this.Clearlua.Text = "Clear";
+            this.Clearlua.UseVisualStyleBackColor = false;
+            this.Clearlua.Click += new System.EventHandler(this.Clearlua_Click);
+            // 
+            // Executelua
+            // 
+            this.Executelua.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Executelua.ForeColor = System.Drawing.SystemColors.Window;
+            this.Executelua.Location = new System.Drawing.Point(138, 180);
+            this.Executelua.Name = "Executelua";
+            this.Executelua.Size = new System.Drawing.Size(64, 36);
+            this.Executelua.TabIndex = 5;
+            this.Executelua.Text = "Execute";
+            this.Executelua.UseVisualStyleBackColor = false;
+            this.Executelua.Click += new System.EventHandler(this.Executelua_Click);
+            // 
+            // Openlua
+            // 
+            this.Openlua.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Openlua.ForeColor = System.Drawing.SystemColors.Window;
+            this.Openlua.Location = new System.Drawing.Point(32, 180);
+            this.Openlua.Name = "Openlua";
+            this.Openlua.Size = new System.Drawing.Size(56, 36);
+            this.Openlua.TabIndex = 4;
+            this.Openlua.Text = "Open";
+            this.Openlua.UseVisualStyleBackColor = false;
+            this.Openlua.Click += new System.EventHandler(this.Openlua_Click);
+            // 
+            // LuaBox
+            // 
+            this.LuaBox.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.LuaBox.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\n";
+            this.LuaBox.AutoScrollMinSize = new System.Drawing.Size(106, 14);
+            this.LuaBox.BackBrush = null;
+            this.LuaBox.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.LuaBox.CharHeight = 14;
+            this.LuaBox.CharWidth = 8;
+            this.LuaBox.CommentPrefix = "--";
+            this.LuaBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LuaBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.LuaBox.IsReplaceMode = false;
+            this.LuaBox.Language = FastColoredTextBoxNS.Language.Lua;
+            this.LuaBox.LeftBracket = '(';
+            this.LuaBox.LeftBracket2 = '{';
+            this.LuaBox.Location = new System.Drawing.Point(6, 6);
+            this.LuaBox.Name = "LuaBox";
+            this.LuaBox.Paddings = new System.Windows.Forms.Padding(0);
+            this.LuaBox.RightBracket = ')';
+            this.LuaBox.RightBracket2 = '}';
+            this.LuaBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.LuaBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("LuaBox.ServiceColors")));
+            this.LuaBox.Size = new System.Drawing.Size(323, 168);
+            this.LuaBox.TabIndex = 0;
+            this.LuaBox.Text = "--Limited Lua";
+            this.LuaBox.Zoom = 100;
             // 
             // Inject
             // 
             this.Inject.BackColor = System.Drawing.SystemColors.MenuText;
             this.Inject.ForeColor = System.Drawing.SystemColors.Window;
-            this.Inject.Location = new System.Drawing.Point(127, 271);
+            this.Inject.Location = new System.Drawing.Point(164, 271);
             this.Inject.Name = "Inject";
             this.Inject.Size = new System.Drawing.Size(75, 23);
             this.Inject.TabIndex = 1;
@@ -362,7 +480,7 @@
             // 
             this.Theme.BackColor = System.Drawing.SystemColors.MenuText;
             this.Theme.ForeColor = System.Drawing.SystemColors.Window;
-            this.Theme.Location = new System.Drawing.Point(208, 271);
+            this.Theme.Location = new System.Drawing.Point(277, 271);
             this.Theme.Name = "Theme";
             this.Theme.Size = new System.Drawing.Size(75, 23);
             this.Theme.TabIndex = 3;
@@ -370,152 +488,21 @@
             this.Theme.UseVisualStyleBackColor = false;
             this.Theme.Click += new System.EventHandler(this.Theme_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Black;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeUIToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // changeUIToolStripMenuItem
-            // 
-            this.changeUIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.materialSkinUIToolStripMenuItem,
-            this.metroModernUIToolStripMenuItem});
-            this.changeUIToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.changeUIToolStripMenuItem.Name = "changeUIToolStripMenuItem";
-            this.changeUIToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.changeUIToolStripMenuItem.Text = "Change UI";
-            // 
-            // materialSkinUIToolStripMenuItem
-            // 
-            this.materialSkinUIToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.materialSkinUIToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.materialSkinUIToolStripMenuItem.Name = "materialSkinUIToolStripMenuItem";
-            this.materialSkinUIToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.materialSkinUIToolStripMenuItem.Text = "MaterialSkinUI";
-            this.materialSkinUIToolStripMenuItem.Click += new System.EventHandler(this.materialSkinUIToolStripMenuItem_Click);
-            // 
-            // metroModernUIToolStripMenuItem
-            // 
-            this.metroModernUIToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.metroModernUIToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.metroModernUIToolStripMenuItem.Name = "metroModernUIToolStripMenuItem";
-            this.metroModernUIToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.metroModernUIToolStripMenuItem.Text = "MetroModernUI";
-            this.metroModernUIToolStripMenuItem.Click += new System.EventHandler(this.metroModernUIToolStripMenuItem_Click);
-            // 
-            // Lua
-            // 
-            this.Lua.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Lua.Controls.Add(this.Clearlua);
-            this.Lua.Controls.Add(this.Executelua);
-            this.Lua.Controls.Add(this.Openlua);
-            this.Lua.Controls.Add(this.LuaBox);
-            this.Lua.ForeColor = System.Drawing.SystemColors.Window;
-            this.Lua.Location = new System.Drawing.Point(4, 22);
-            this.Lua.Name = "Lua";
-            this.Lua.Size = new System.Drawing.Size(252, 211);
-            this.Lua.TabIndex = 3;
-            this.Lua.Text = "Lua";
-            // 
-            // LuaBox
-            // 
-            this.LuaBox.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.LuaBox.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\n";
-            this.LuaBox.AutoScrollMinSize = new System.Drawing.Size(131, 14);
-            this.LuaBox.BackBrush = null;
-            this.LuaBox.BackColor = System.Drawing.SystemColors.MenuText;
-            this.LuaBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
-            this.LuaBox.CharHeight = 14;
-            this.LuaBox.CharWidth = 8;
-            this.LuaBox.CommentPrefix = "--";
-            this.LuaBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LuaBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.LuaBox.Font = new System.Drawing.Font("Courier New", 9.75F);
-            this.LuaBox.IsReplaceMode = false;
-            this.LuaBox.Language = FastColoredTextBoxNS.Language.Lua;
-            this.LuaBox.LeftBracket = '(';
-            this.LuaBox.LeftBracket2 = '{';
-            this.LuaBox.Location = new System.Drawing.Point(6, 6);
-            this.LuaBox.Name = "LuaBox";
-            this.LuaBox.Paddings = new System.Windows.Forms.Padding(0);
-            this.LuaBox.RightBracket = ')';
-            this.LuaBox.RightBracket2 = '}';
-            this.LuaBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.LuaBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("LuaBox.ServiceColors")));
-            this.LuaBox.Size = new System.Drawing.Size(240, 157);
-            this.LuaBox.TabIndex = 0;
-            this.LuaBox.Text = "--Limited Lua";
-            this.LuaBox.Zoom = 100;
-            // 
-            // Openlua
-            // 
-            this.Openlua.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Openlua.ForeColor = System.Drawing.SystemColors.Window;
-            this.Openlua.Location = new System.Drawing.Point(11, 169);
-            this.Openlua.Name = "Openlua";
-            this.Openlua.Size = new System.Drawing.Size(56, 36);
-            this.Openlua.TabIndex = 4;
-            this.Openlua.Text = "Open";
-            this.Openlua.UseVisualStyleBackColor = false;
-            this.Openlua.Click += new System.EventHandler(this.Openlua_Click);
-            // 
-            // Executelua
-            // 
-            this.Executelua.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Executelua.ForeColor = System.Drawing.SystemColors.Window;
-            this.Executelua.Location = new System.Drawing.Point(84, 169);
-            this.Executelua.Name = "Executelua";
-            this.Executelua.Size = new System.Drawing.Size(64, 36);
-            this.Executelua.TabIndex = 5;
-            this.Executelua.Text = "Execute";
-            this.Executelua.UseVisualStyleBackColor = false;
-            this.Executelua.Click += new System.EventHandler(this.Executelua_Click);
-            // 
-            // Clearlua
-            // 
-            this.Clearlua.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Clearlua.ForeColor = System.Drawing.SystemColors.Window;
-            this.Clearlua.Location = new System.Drawing.Point(165, 169);
-            this.Clearlua.Name = "Clearlua";
-            this.Clearlua.Size = new System.Drawing.Size(81, 36);
-            this.Clearlua.TabIndex = 6;
-            this.Clearlua.Text = "Clear";
-            this.Clearlua.UseVisualStyleBackColor = false;
-            this.Clearlua.Click += new System.EventHandler(this.Clearlua_Click);
-            // 
             // IceMemeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuText;
-            this.ClientSize = new System.Drawing.Size(284, 306);
+            this.ClientSize = new System.Drawing.Size(364, 306);
             this.Controls.Add(this.Theme);
             this.Controls.Add(this.TopCheck);
             this.Controls.Add(this.Inject);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MainMenuStrip = this.menuStrip1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IceMemeForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IceMeme UI Dark Theme";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IceSourceForm_FormClosed);
@@ -526,8 +513,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.JumpPowerValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).EndInit();
             this.LuaC.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LuaCBox)).EndInit();
             this.Lua.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LuaBox)).EndInit();
             this.ResumeLayout(false);
@@ -542,7 +528,6 @@
         private System.Windows.Forms.TabPage CMDS;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Execute;
-        private System.Windows.Forms.RichTextBox LuaCBox;
         private System.Windows.Forms.RichTextBox CmdBox;
         private System.Windows.Forms.Button Send;
         private System.Windows.Forms.TextBox CmdTextBox;
@@ -559,15 +544,12 @@
         private System.Windows.Forms.Button JP;
         private System.Windows.Forms.CheckBox TopCheck;
         private System.Windows.Forms.Button Theme;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem changeUIToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem materialSkinUIToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem metroModernUIToolStripMenuItem;
         private System.Windows.Forms.TabPage Lua;
         private System.Windows.Forms.Button Clearlua;
         private System.Windows.Forms.Button Executelua;
         private System.Windows.Forms.Button Openlua;
         private FastColoredTextBoxNS.FastColoredTextBox LuaBox;
+        private FastColoredTextBoxNS.FastColoredTextBox LuaCBox;
     }
 }
 

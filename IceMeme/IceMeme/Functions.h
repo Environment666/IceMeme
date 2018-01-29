@@ -25,12 +25,11 @@ std::string tolower(std::string str)
 
 void rlua_getService(std::string service)
 {
-	using namespace Rlua;
-	rlua_getfield(luaState, LUA_GLOBALSINDEX, "game");
-	rlua_getfield(luaState, -1, "GetService");
-	rlua_pushvalue(luaState, -2);
-	rlua_pushstring(luaState, service.c_str());
-	rlua_call(luaState, 2, 1);
+	Rlua::rlua_getfield(luaState, LUA_GLOBALSINDEX, "game");
+	Rlua::rlua_getfield(luaState, -1, "GetService");
+	Rlua::rlua_pushvalue(luaState, -2);
+	Rlua::rlua_pushstring(luaState, service.c_str());
+	rlua_bpcall(luaState, 2, 1, 0);
 }
 
 DWORD APIENTRY UglyToolBar()

@@ -2,7 +2,6 @@
 
 typedef int(RluaState);
 
-//#define LUA_GLOBALSINDEX -10002
 #define rlua_getglobal(l,g)			 Rlua::rlua_getfield(l, LUA_GLOBALSINDEX, g)
 //retcheck by eternal
 DWORD unprotect(DWORD addr)
@@ -104,8 +103,6 @@ namespace Rlua {
 	Lua_pushstring rlua_pushstring = (Lua_pushstring)pushstringaddress;
 	typedef void(__cdecl *Lua_pushvalue)(RluaState lst, int index);
 	Lua_pushvalue rlua_pushvalue = (Lua_pushvalue)unprotect(pushvalueaddress);
-	typedef int(__cdecl *Lua_call)(RluaState lst, int nargs, int nresults);
-	Lua_call rlua_call = (Lua_call)unprotect(calladdress);
 	typedef void(__cdecl *Lua_setfield)(RluaState lst, int index, const char *k);
 	Lua_setfield rlua_setfield2 = (Lua_setfield)unprotect(setfieldaddress);
 	typedef void(__cdecl *Lua_pushnumber)(RluaState lst, double n);
@@ -132,18 +129,17 @@ void rlua_bpcall(RluaState lst, int nargs, int nresults, int errfunc) {
 
 //bypass/workaround for setting values on non-fe games thanks to DOGGO from SpoonFeed Hub Discord
 void rlua_setfield(int L, int idx, const char *k) {
-	using namespace Rlua;
-	rlua_pushvalue(L, idx);
-	if (rlua_getmetatable(L, -1)) {
-		rlua_getfield(L, -1, "__newindex");
-		rlua_pushvalue(L, -3);
-		rlua_pushstring(L, k);
-		rlua_pushvalue(L, -6);
+	Rlua::rlua_pushvalue(L, idx);
+	if (Rlua::rlua_getmetatable(L, -1)) {
+		Rlua::rlua_getfield(L, -1, "__newindex");
+		Rlua::rlua_pushvalue(L, -3);
+		Rlua::rlua_pushstring(L, k);
+		Rlua::rlua_pushvalue(L, -6);
 		rlua_bpcall(L, 3, 0, 0);
 		rlua_pop(L, 3);
 	}
 	else {
 		rlua_pop(L, 1);
-		rlua_setfield2(L, idx, k);
+		Rlua::rlua_setfield2(L, idx, k);
 	}
 }
