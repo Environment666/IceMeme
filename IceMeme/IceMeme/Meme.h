@@ -500,11 +500,11 @@ void Exe(std::string input) {
 	lua_State* LuaS = lua_newthread(luaS);
 	luaL_openlibs(LuaS);
 	opencustomlibs(LuaS);
-	std::string total;
 	int error = luaL_dostring(LuaS, input.c_str());//Lua Error Interpreter(?)
 	if (error) {
 		IceMemebox(lua_tostring(LuaS, -1));
 		lua_pop(LuaS, 1);
+		return;
 	}
 	lua_settop(LuaS, 0);
 	lua_close(LuaS);

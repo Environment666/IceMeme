@@ -15,6 +15,9 @@ namespace IceMemeUI
             InitializeComponent();
             //TopMost Enabled by default
             TopMost = true;
+            Functions.PopulateListBox(LuaScriptList, "./LuaScripts", "*.txt");
+            Functions.PopulateListBox(LuaScriptList, "./LuaScripts", "*.lua");
+            Functions.PopulateListBox(LuaCScriptList, "./LuaCScripts", "*.txt");
         }
         //clear button click event
         private void Clear_Click(object sender, EventArgs e) => LuaCBox.Clear();//this clear all the text in luac richtextbox
@@ -166,7 +169,7 @@ namespace IceMemeUI
             if (thm > 1) thm = 0;
         }
 
-        private void IceSourceForm_FormClosed(object sender, FormClosedEventArgs e) => Application.Exit();
+        private void IceSourceForm_FormClosed(object sender, FormClosedEventArgs e) => Environment.Exit(0);
 
         private void Executelua_Click(object sender, EventArgs e)
         {
@@ -231,6 +234,43 @@ namespace IceMemeUI
             e.ChangedRange.SetStyle(FirebrickStyle, @"emptystack", RegexOptions.Multiline);
             e.ChangedRange.SetStyle(GoldBlueStyle, @"getservice", RegexOptions.Multiline);
             e.ChangedRange.SetStyle(CoralStyle, @"pushboolean", RegexOptions.Multiline);
+        }
+
+        private void RefreshLuaList_Click(object sender, EventArgs e)
+        {
+            LuaScriptList.Items.Clear();
+            Functions.PopulateListBox(LuaScriptList, "./LuaScripts", "*.txt");
+            Functions.PopulateListBox(LuaScriptList, "./LuaScripts", "*.lua");
+        }
+
+        private void LuaScriptList_SelectedIndexChanged(object sender, EventArgs e) => LuaBox.Text = File.ReadAllText($"./LuaScripts/{LuaScriptList.SelectedItem}");
+
+        private void RefreshLuaCList_Click(object sender, EventArgs e)
+        {
+            LuaCScriptList.Items.Clear();
+            Functions.PopulateListBox(LuaCScriptList, "./LuaCScripts", "*.txt");
+        }
+
+        private void LuaCScriptList_SelectedIndexChanged(object sender, EventArgs e) => LuaCBox.Text = File.ReadAllText($"./LuaCScripts/{LuaCScriptList.SelectedItem}");
+
+        private void PPAP_Click(object sender, EventArgs e)
+        {
+            NamedPipes.CommandPipe("ppap");
+        }
+
+        private void Rickrolll_Click(object sender, EventArgs e)
+        {
+            NamedPipes.CommandPipe("rickroll");
+        }
+
+        private void CRINGE_Click(object sender, EventArgs e)
+        {
+            NamedPipes.CommandPipe("cringe");
+        }
+
+        private void BILLNYE_Click(object sender, EventArgs e)
+        {
+            NamedPipes.CommandPipe("billnye");
         }
     }
 }

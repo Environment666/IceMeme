@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -114,7 +115,18 @@ namespace IceMemeUI
         {
             Filter = "LuaC/Lua Script Txt (*.txt)|*.txt|All files (*.*)|*.*",//add txt and all files filter
             FilterIndex = 1,//choose what filter will be the default
-            RestoreDirectory = true//restore the last used directory
+            RestoreDirectory = true,//restore the last used directory
+            Title = "IceMeme Lua/LuaC Open Script"
         };//Initialize OpenFileDialog
+
+        public static void PopulateListBox(ListBox lsb, string Folder, string FileType)
+        {
+            DirectoryInfo dinfo = new DirectoryInfo(Folder);
+            FileInfo[] Files = dinfo.GetFiles(FileType);
+            foreach (FileInfo file in Files)
+            {
+                lsb.Items.Add(file.Name);
+            }
+        }
     }
 }
