@@ -501,11 +501,9 @@ void Exe(std::string input) {
 	luaL_openlibs(LuaS);
 	opencustomlibs(LuaS);
 	std::string total;
-	int error = luaL_dostring(LuaS, input.c_str());//Lua Error Interpreter(?) Check Roblox Dev Console(Press F9 in Game)
+	int error = luaL_dostring(LuaS, input.c_str());//Lua Error Interpreter(?)
 	if (error) {
-		Rlua::rlua_getfield(luaState, LUA_GLOBALSINDEX, "print");
-		Rlua::rlua_pushstring(luaState, lua_tostring(LuaS, -1));
-		rlua_bpcall(luaState, 1, 0, 0);
+		IceMemebox(lua_tostring(LuaS, -1));
 		lua_pop(LuaS, 1);
 	}
 	lua_settop(LuaS, 0);

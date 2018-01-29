@@ -1,5 +1,7 @@
 #pragma once
 
+#define IceMemebox(msg) MessageBox(NULL, msg, "ICEMEME - Uh Oh", MB_OK | MB_TOPMOST);
+
 std::vector<std::string> Split(std::string str, char Delim) {
 	std::vector<std::string> Args;
 	std::stringstream ss(str);
@@ -34,6 +36,7 @@ void rlua_getService(std::string service)
 
 DWORD APIENTRY UglyToolBar()
 {
+	IceMemebox("ICEMEME has loaded Correctly!\nHey SKID! now you can use ICEMEME!\nUpdated and improved by rakion99\nIce Skidded by Josh(), MemeHax by tepig");
 	HWND FindRobloxWindow = FindWindowExW(NULL, NULL, NULL, L"Roblox");
 	HMENU GetUglyMenu = GetMenu(FindRobloxWindow);
 	HMENU CreateUglyMenuBar = CreateMenu();

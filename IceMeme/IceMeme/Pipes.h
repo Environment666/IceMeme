@@ -24,10 +24,10 @@ DWORD WINAPI CmdPipe(PVOID lvpParameter)
 					Commands(buffer);
 				}
 				catch (std::exception e) {
-					MessageBox(NULL, e.what(), "ICEMEME - Uh Oh", MB_OK);
+					IceMemebox(e.what());
 				}
 				catch (...) {
-					MessageBox(NULL, "An Unhandled Error Has Occured!", "ICEMEME - Uh Oh", MB_OK);
+					IceMemebox("An Unhandled Error Has Occured!");
 				}
 			}
 		}
@@ -59,10 +59,10 @@ DWORD WINAPI LuaCPipe(PVOID lvpParameter)
 					LuaCExe(buffer);
 				}
 				catch (std::exception e) {
-					MessageBox(NULL, e.what(), "ICEMEME - Uh Oh", MB_OK);
+					IceMemebox(e.what());
 				}
 				catch (...) {
-					MessageBox(NULL, "An Unhandled Error Has Occured!", "ICEMEME - Uh Oh", MB_OK);
+					IceMemebox("An Unhandled Error Has Occured!");
 				}
 			}
 		}
@@ -96,10 +96,10 @@ DWORD WINAPI LuaPipe(PVOID lvpParameter)
 					}
 				}
 				catch (std::exception e) {
-					MessageBox(NULL, e.what(), "ICEMEME - Uh Oh", MB_OK);
+					IceMemebox(e.what());
 				}
 				catch (...) {
-					MessageBox(NULL, "An Unhandled Error Has Occured!", "ICEMEME - Uh Oh", MB_OK);
+					IceMemebox("An Unhandled Error Has Occured!");
 				}
 			}
 		}
